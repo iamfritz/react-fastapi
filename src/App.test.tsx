@@ -89,7 +89,9 @@ describe("App", () => {
     expect(
       screen.getByRole("heading", { name: /laravel ai fastapi/i }),
     ).toBeInTheDocument();
-    expect(screen.getByText(/browse products/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /explore catalog/i }),
+    ).toBeInTheDocument();
   });
 
   it("shows the blog navigation link", () => {
@@ -107,5 +109,11 @@ describe("App", () => {
     const marketingButton = screen.getByRole("button", { name: /marketing/i });
     expect(marketingButton).toHaveAttribute("aria-pressed", "true");
     expect(marketingButton.className).toContain("text-cyan-300");
+  });
+
+  it("shows the admin dashboard entry from the main navigation", () => {
+    render(<App />);
+
+    expect(screen.getByRole("link", { name: /admin/i })).toBeInTheDocument();
   });
 });

@@ -1,4 +1,26 @@
-# React + TypeScript + Vite
+# React Admin + FastAPI
+
+This frontend includes a React Admin dashboard for managing products and blog
+posts, backed by the FastAPI API in the sibling `../python-fastapi-api` folder.
+
+## Run the frontend
+
+```bash
+npm install
+npm run dev
+```
+
+Start that FastAPI API on `http://127.0.0.1:8000` before using the storefront or
+admin. Open `/admin` and sign in with an existing admin or editor account's
+email and password. Editors can create and update records; only admins can
+delete them.
+
+## Verify changes
+
+```bash
+npm run build
+npm test
+```
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
